@@ -19,7 +19,7 @@ private:
 	void endDraw();
 	sf::RenderWindow* window;
 
-	sf::RectangleShape rect1, rect2, rect3;
+	sf::RectangleShape rect1, rect2, rect3, rect4;
 	sf::CircleShape circle;
 
 	sf::Font font;

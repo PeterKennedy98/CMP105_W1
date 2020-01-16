@@ -17,6 +17,9 @@ Level::Level(sf::RenderWindow* hwnd)
 	rect3.setPosition(125, 125);
 	rect3.setFillColor(sf::Color::Blue);
 
+	rect4.setSize(sf::Vector2f(80, 40));
+	rect4.setFillColor(sf::Color::Green);
+
 	circle.setRadius(50);
 	circle.setPosition(600, 300);
 	circle.setFillColor(sf::Color::Blue);
@@ -48,7 +51,8 @@ void Level::handleInput()
 // Update game objects
 void Level::update()
 {
-	
+	sf::Vector2u pos = window->getSize();
+	rect4.setPosition((pos.x - 80), (pos.y - 40));
 }
 
 // Render level
@@ -58,6 +62,7 @@ void Level::render()
 	window->draw(rect1);
 	window->draw(rect2);
 	window->draw(rect3);
+	window->draw(rect4);
 	window->draw(circle);
 	window->draw(text);
 	endDraw();
