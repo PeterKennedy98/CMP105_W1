@@ -23,6 +23,16 @@ Level::Level(sf::RenderWindow* hwnd)
 	circle.setOutlineColor(sf::Color::Red);
 	circle.setOutlineThickness(2.f);
 	
+	if (!font.loadFromFile("font/arial.ttf"))
+	{
+		std::cout << "Error loading font.\n";
+	}
+	text.setFont(font);
+	text.setPosition(10, 10);
+	text.setString("Hello World!");
+	text.setCharacterSize(24);
+	text.setFillColor(sf::Color::Green);
+
 }
 
 Level::~Level()
@@ -48,6 +58,8 @@ void Level::render()
 	window->draw(rect1);
 	window->draw(rect2);
 	window->draw(rect3);
+	window->draw(circle);
+	window->draw(text);
 	endDraw();
 }
 
